@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.candypoint.neo.geodatacollector.DBConnect.SQLiteConnection;
 import com.candypoint.neo.geodatacollector.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,12 +27,15 @@ public class MainActivity extends AppCompatActivity {
     private final long FINISH_INTERVAL_TIME = 2000;
     private long backButtonPressedTime = 0;
 
+    private SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         requestPermission();
+        initDatabase();
 
         isButtonClicked = false;
         btnCollectGPSData = (Button)findViewById(R.id.main_button_collect_gps);
@@ -132,5 +137,10 @@ public class MainActivity extends AppCompatActivity {
                 requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION}, 1000);
             }
         }
+    }
+
+    private void initDatabase(){
+        SQLiteConnection conn = new SQLiteConnection(this);
+        this.db = conn.getSQLiteDB();
     }
 }
