@@ -6,13 +6,85 @@
     android:layout_height="match_parent"
     tools:context="com.candypoint.neo.geodatacollector.Activities.MainActivity">
 
+    <LinearLayout
+        android:id="@+id/main_linear_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:inputType="number"
+            android:layout_margin="10dp"
+            android:hint="Period (단위 : ms)"
+            android:gravity="center"
+            android:id="@+id/main_edttxt_input_period"
+            android:layout_alignParentTop="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/main_edttxt_input_status"
+            android:inputType="number"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:hint="Status"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <EditText
+        android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/main_linear_layout"
+        android:id="@+id/main_edttxt_input_section_name"
+        android:hint="구간 이름"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
-        android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
+        android:layout_below="@id/main_edttxt_input_section_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:id="@+id/main_button_collect_gps"
         android:text="GPS 정보 수집하기"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Latitude  : "
+        android:layout_below="@id/main_button_collect_gps"
+        android:id="@+id/main_text_view_lat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Longitude : "
+        android:layout_below="@id/main_text_view_lat"
+        android:id="@+id/main_text_view_lng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/main_text_view_lng"
+        android:layout_width="fill_parent"
+        android:layout_height="350dp"
+        android:id="@+id/main_current_map_view"
+        tools:context=".Activities.MapViewActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        />
 
     <Button
         android:id="@+id/main_button_show_collected_data"

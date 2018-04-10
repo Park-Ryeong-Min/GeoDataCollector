@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_margin="10dp"
+            android:id="@+id/map_select_start_with_google_map"
+            android:text="Google Maps 로 시작하기"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <Button
+            android:layout_margin="10dp"
+            android:id="@+id/map_select_start_with_naver_map"
+            android:text="Naver 지도로 시작하기"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <Button
+            android:layout_margin="10dp"
+            android:text="전체 경로 확인하기"
+            android:id="@+id/map_select_start_total_path"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+        
+        <Button
+            android:layout_margin="10dp"
+            android:text="경로 검색하기"
+            android:id="@+id/map_select_start_search_path"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
