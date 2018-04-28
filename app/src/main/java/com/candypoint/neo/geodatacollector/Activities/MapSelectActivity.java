@@ -36,7 +36,7 @@ public class MapSelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(MapSelectActivity.this, MainActivity.class);
                 startActivity(it);
-                finish();
+                //finish();
             }
         });
 
@@ -46,7 +46,7 @@ public class MapSelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(MapSelectActivity.this, NaverMapActivity.class );
                 startActivity(it);
-                finish();
+                //finish();
             }
         });
 
@@ -56,7 +56,7 @@ public class MapSelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(MapSelectActivity.this, TotalPathActivity.class);
                 startActivity(it);
-                finish();
+                //finish();
             }
         });
 
@@ -66,7 +66,7 @@ public class MapSelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(MapSelectActivity.this, SearchPathActivity.class);
                 startActivity(it);
-                finish();
+                //finish();
             }
         });
 

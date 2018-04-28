@@ -13,6 +13,25 @@ public class EdgeList {
         this.list = new ArrayList<AdjacentEdge>();
     }
 
+    public boolean addEdge(long id1, long id2, double dist){
+        boolean ret = true;
+        for(int i = 0; i < this.list.size(); i++){
+            SimpleNodeData nodes[] = this.list.get(i).getNodes();
+            if(nodes[0].getNodeID() == id1 && nodes[1].getNodeID() == id2){
+                ret = false;
+            }
+            if(nodes[0].getNodeID() == id2 && nodes[1].getNodeID() == id1){
+                ret = false;
+            }
+        }
+        if(ret){
+            // 같은게 없음
+            AdjacentEdge e = new AdjacentEdge(new SimpleNodeData(id1, 0, 0), new SimpleNodeData(id2, 0,0), dist);
+            this.list.add(e);
+        }
+        return ret;
+    }
+
     public boolean addEdge(SimpleNodeData data1, SimpleNodeData data2){
         boolean ret = true;
         for(int i = 0; i < this.list.size(); i++){
